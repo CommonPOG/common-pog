@@ -22,6 +22,11 @@ html, body {
     width: 100%;
     position: relative;
 }
+    
+.brand-logo {
+    max-width: 100px;
+    height: auto;
+}
 
 body {
     background-color: var(--bg-dark);
@@ -357,9 +362,6 @@ a {
     
     .navbar .logo {
         font-size: 1.8rem;
-    }
-    .brand-logo {
-    max-width: 100px;
-    height: auto;
+
 }
 }
