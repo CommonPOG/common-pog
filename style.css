@@ -22,7 +22,7 @@ html, body {
     width: 100%;
     position: relative;
 }
-    
+
 .brand-logo {
     max-width: 250px;
     height: auto;
@@ -55,9 +55,50 @@ a {
     width: 100%;
 }
 
+/* ── Header disclosure ── */
+.header-disclosure {
+    background-color: #1a1a1a;
+    color: #a0a0a0;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 12px;
+    border-bottom: 1px solid #333;
+}
+
+.header-disclosure p {
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* ── Ambient glow decorations ── */
+/* FIX: These were referenced in HTML but never defined */
+.ambient-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.04;
+}
+
+.glow-top-left {
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle, #ff4d00, transparent 70%);
+}
+
+.glow-bottom-right {
+    bottom: -200px;
+    right: -200px;
+    background: radial-gradient(circle, #ff0000, transparent 70%);
+}
+
+/* ── Navbar ── */
 .navbar {
     padding: 20px 0;
-    position: relative; /* Changed from absolute */
+    position: relative;
     width: 100%;
     z-index: 100;
 }
@@ -72,9 +113,10 @@ a {
     -webkit-text-fill-color: transparent;
 }
 
+/* ── Hero ── */
 .hero {
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 80px;
+    padding-bottom: 60px;
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -87,6 +129,30 @@ a {
     align-items: center;
 }
 
+/* FIX: Added glitch-text — referenced in HTML but was never defined */
+.glitch-text {
+    position: relative;
+}
+
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    color: #ff4d00;
+    clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+    transform: translateX(-2px);
+    opacity: 0;
+    animation: glitch 4s infinite;
+}
+
+@keyframes glitch {
+    0%, 90%, 100% { opacity: 0; }
+    92% { opacity: 0.6; transform: translateX(-3px); }
+    94% { opacity: 0; }
+    96% { opacity: 0.4; transform: translateX(3px); }
+    98% { opacity: 0; }
+}
+
 .hero-text h1 {
     font-size: clamp(2.5rem, 10vw, 5rem);
     margin-bottom: 20px;
@@ -97,9 +163,25 @@ a {
 .hero-text .subtitle {
     font-size: 1.2rem;
     color: var(--text-muted);
-    max-width: 400px;
+    max-width: 600px;
 }
 
+/* Reverse hero layout (card on left, text on right) */
+.hero.reverse .hero-layout {
+    direction: rtl;
+}
+
+.hero.reverse .hero-text,
+.hero.reverse .hero-card-wrapper {
+    direction: ltr;
+}
+
+.hero.reverse .hero-text {
+    text-align: right;
+    margin-left: auto;
+}
+
+/* ── Cards ── */
 .card {
     background: var(--bg-card);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -138,9 +220,9 @@ a {
     word-break: break-word;
 }
 
-.brand-name.lykitys { color: #ff8c00; }
-.brand-name.mainio { color: #ffffff; letter-spacing: -2px; }
-.brand-name.raketti { color: #ff00de; }
+.brand-name.lykitys  { color: #ff8c00; }
+.brand-name.mainio   { color: #ffffff; letter-spacing: -2px; }
+.brand-name.raketti  { color: #ff00de; }
 .brand-name.jackburst { color: #00e5ff; line-height: 0.8; }
 
 .offer-big {
@@ -166,11 +248,18 @@ a {
 
 .offer-details {
     color: var(--text-muted);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 0.95rem;
     line-height: 1.5;
 }
 
+/* FIX: Replaces all the <br><br><br> spacer hacks — pushes button to
+   bottom of every card automatically regardless of content height */
+.card .btn {
+    margin-top: auto;
+}
+
+/* ── Buttons ── */
 .btn {
     display: inline-block;
     padding: 15px 40px;
@@ -197,6 +286,7 @@ a {
     animation: pulse-glow 2s infinite;
 }
 
+/* ── Badges ── */
 .badge {
     position: absolute;
     top: 15px;
@@ -209,22 +299,23 @@ a {
     z-index: 10;
 }
 
-.badge.new { background: var(--neon-green); color: black; }
+.badge.new       { background: var(--neon-green); color: black; }
 .badge.exclusive { background: white; color: red; border: 2px solid red; }
-.badge.crypto { background: #5e17eb; color: white; border: 1px solid #a372ff; }
+.badge.crypto    { background: #5e17eb; color: white; border: 1px solid #a372ff; }
 
 .card-stars {
-    color: #ffd700; 
+    color: #ffd700;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
+/* ── Offers sections ── */
 .offers-section {
     padding: 60px 0;
 }
 
 .offers-section + .offers-section {
-    padding-top: 0; 
+    padding-top: 0;
 }
 
 .section-title {
@@ -241,27 +332,91 @@ a {
     gap: 30px;
 }
 
-.footer {
-    background: #000;
-    padding: 60px 0;
-    border-top: 1px solid #222;
+/* ── About section ── */
+/* FIX: Moved inline styles into CSS */
+.about-me {
     text-align: center;
-    color: #555;
+    padding: 50px 20px;
+    color: #fff;
+    background-color: #111;
+    border-top: 1px solid #222;
+}
+
+.about-container {
+    max-width: 800px;
+}
+
+.about-me h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.about-me p {
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: #ff3366;
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    color: #ff6688;
+}
+
+/* ── Footer ── */
+/* FIX: Moved inline styles into CSS */
+.footer {
+    background-color: #050505;
+    padding: 40px 20px;
+    color: #888;
+    text-align: center;
+    font-size: 13px;
+    border-top: 1px solid #222;
+}
+
+.footer-container {
+    max-width: 1000px;
 }
 
 .footer h3 {
+    color: #bbb;
+    margin-bottom: 15px;
+    font-size: 16px;
     font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .disclaimer-text {
-    font-size: 0.8rem;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
     line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 20px;
+}
+
+.footer-compliance-links {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-compliance-links a {
+    color: #aaa;
+    text-decoration: underline;
 }
 
 .footer-icons {
@@ -270,19 +425,41 @@ a {
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #aaa;
 }
 
 .age-limit {
-    border: 1px solid #555;
-    padding: 5px;
+    border: 1px solid #666;
     border-radius: 50%;
-    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #aaa;
+    font-size: 11px;
 }
 
+.copyright {
+    margin-top: 20px;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+}
+
+/* ── Scroll animations ── */
 .hidden-element {
     opacity: 0;
-    transform: translateY(50px); 
-    transition: all 0.8s ease-out; 
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
 }
 
 .visible {
@@ -290,12 +467,144 @@ a {
     transform: translateY(0);
 }
 
+/* ── Animations ── */
 @keyframes pulse-glow {
-    0% { box-shadow: 0 0 0 0 rgba(255, 77, 0, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 77, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 77, 0, 0); }
+    0%   { box-shadow: 0 0 0 0   rgba(255, 77, 0, 0.7); }
+    70%  { box-shadow: 0 0 0 10px rgba(255, 77, 0, 0); }
+    100% { box-shadow: 0 0 0 0   rgba(255, 77, 0, 0); }
 }
 
+/* ── Maxswap horizontal row section ── */
+.maxswap-section {
+    padding: 0 0 60px;
+}
+
+.maxswap-section .section-label {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    /* FIX: font-weight: 1000 is invalid — max is 900 */
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.maxswap-row-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(255, 77, 0, 0.08);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: visible;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.maxswap-row-card:hover {
+    border-color: rgba(255, 77, 0, 0.5);
+    box-shadow: 0 10px 40px rgba(255, 77, 0, 0.18);
+}
+
+.maxswap-row-card .badge {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    z-index: 10;
+}
+
+.maxswap-col {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1 1 0;
+}
+
+/* Col 1 – Logo */
+.maxswap-col-logo img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+}
+
+/* Col 2 – Features */
+.maxswap-col-features {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.maxswap-col-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.maxswap-col-features ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* FIX: Was being overridden by inline font-size:30px — now correctly 0.9rem */
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.maxswap-col-features ul li:last-child {
+    margin-bottom: 0;
+}
+
+.maxswap-col-features ul li::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 77, 0, 0.6);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%23ff4d00' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+}
+
+/* Col 3 – Offer text */
+/* FIX: Class was .offer-headline in HTML — renamed to .ms-offer-headline to match */
+.maxswap-col-offer .ms-offer-headline {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.05;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.maxswap-col-offer .ms-offer-sub {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Col 4 – CTA */
+.maxswap-col-cta {
+    padding-right: 28px;
+}
+
+.maxswap-col-cta .btn {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ── Responsive: 768px ── */
 @media (max-width: 768px) {
     .hero-layout {
         grid-template-columns: 1fr;
@@ -304,7 +613,7 @@ a {
     }
 
     .hero-text h1 {
-        font-size: 3.5rem; 
+        font-size: 3.5rem;
     }
 
     .hero-text .subtitle {
@@ -314,8 +623,24 @@ a {
     .hero {
         padding-top: 80px;
     }
+
+    /* Reverse hero: keep text on top on mobile */
+    .hero.reverse .hero-text {
+        grid-row: 1;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .hero.reverse .hero-card-wrapper {
+        grid-row: 2;
+    }
+
+    .hero.reverse .hero-text .subtitle {
+        margin: 0 auto 40px auto;
+    }
 }
 
+/* ── Responsive: 600px ── */
 @media (max-width: 600px) {
     .hero-text h1 {
         font-size: 2.8rem;
@@ -340,11 +665,11 @@ a {
     .brand-name {
         font-size: 2.2rem;
     }
-    
+
     .offer-big {
         font-size: 2.5rem;
     }
-    
+
     .offer-medium {
         font-size: 1.8rem;
     }
@@ -358,9 +683,49 @@ a {
         padding: 14px 20px;
         font-size: 0.95rem;
     }
-    
+
     .navbar .logo {
         font-size: 1.8rem;
-
+    }
 }
+
+/* ── Responsive: Maxswap row → stacked on narrow screens ── */
+@media (max-width: 900px) {
+    .maxswap-row-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .maxswap-col {
+        border-left: none !important;
+        /* FIX: Missing semicolon after "border-top: none" was breaking padding */
+        border-top: none;
+        padding: 15px 10px;
+        align-items: center;
+        text-align: center;
+        flex: unset !important;
+        width: 100%;
+    }
+
+    .maxswap-col:first-child {
+        border-top: none;
+    }
+
+    .maxswap-col-features {
+        align-items: center;
+    }
+
+    .maxswap-col-features ul li {
+        justify-content: flex-start;
+        padding-left: 5px;
+    }
+
+    .maxswap-col-cta {
+        padding-right: 24px;
+    }
+
+    .maxswap-row-card .badge {
+        top: 12px;
+        right: 12px;
+    }
 }
