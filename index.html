@@ -10,14 +10,13 @@
       gtag('config', 'G-NRLE639LNC');
     </script>
 
-    <!-- FIX: Replace URL_TO_YOUR_LOGO with your actual logo URL -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "CommonPOG",
       "url": "https://www.commonpog.com",
-      "logo": "URL_TO_YOUR_LOGO",
+      "logo": "https://www.commonpog.com/images/commonpog-logo.webp",
       "description": "Slot enthusiast and influencer providing independent casino reviews and bonus analysis.",
       "sameAs": [
         "https://x.com/uncommon_pog",
@@ -31,81 +30,356 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- FIX: Added meta description for SEO -->
     <meta name="description" content="CommonPOG — Find the best online casino bonuses, no-KYC casinos and exclusive offers for 2026. Independent reviews by a slot specialist.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
     <title>CommonPOG - Official Site for 2026 Bonuses</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Teko:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Disclosure bar -->
     <div class="header-disclosure">
         <p>
             <strong>Affiliate Disclosure:</strong> CommonPOG is an independent review site. We may receive commissions when you click our links and make a purchase. This does not impact our reviews or comparisons. 18+ | Play Responsibly.
         </p>
     </div>
 
-    <!-- FIX: .ambient-glow is now defined in style.css -->
+    <!-- Ambient glows -->
     <div class="ambient-glow glow-top-left"></div>
     <div class="ambient-glow glow-bottom-right"></div>
 
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="container">
+        <div class="container navbar-inner">
             <a href="#" class="logo">CommonPOG</a>
+            <div class="nav-trust">
+                <span class="trust-dot"></span>
+                Trusted by 500+ players
+            </div>
         </div>
     </nav>
 
-    <!-- HERO: Vave -->
+    <!-- HERO -->
     <section class="hero">
         <div class="container hero-layout">
             <div class="hero-text">
-                <!-- FIX: .glitch-text is now defined in style.css -->
-                <h1 class="glitch-text">Personal Recommendation</h1>
-                <p class="subtitle">Claim The Most Popular Offer!</p>
+                <p class="hero-eyebrow">Our #1 Pick for Crypto Casino Players</p>
+                <h1 class="glitch-text">Personal<br>Recommendation</h1>
+                <p class="subtitle">Fast payouts, crypto-friendly, mobile optimised, and a strong welcome bonus — verified by CommonPOG.</p>
+
+                <!-- Progress steps -->
+                <div class="progress-steps">
+                    <div class="step completed">
+                        <span class="step-icon">✓</span>
+                        <span>Pick your casino</span>
+                    </div>
+                    <div class="step active">
+                        <span class="step-icon step-num">2</span>
+                        <span>Create free account</span>
+                        <span class="step-arrow">← You are here</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-icon step-num">3</span>
+                        <span>Claim your bonus</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-icon step-num">4</span>
+                        <span>Start playing</span>
+                    </div>
+                </div>
             </div>
 
+            <!-- Featured Vave card -->
             <div class="hero-card-wrapper">
                 <div class="card featured-card">
-                    <div class="badge exclusive">NO KYC!</div>
-                    <!-- FIX: Added missing semicolon on 5th star entity (&#9733;) -->
+                    <div class="badge exclusive">NO KYC</div>
                     <div class="card-stars">
                         <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
                     </div>
                     <div class="logo-area">
-                        <a href="https://top.moxtop.com/redirect.aspx?pid=47611&bid=1481&lpid=198" target="_blank" rel="nofollow">
+                        <a href="https://top.moxtop.com/redirect.aspx?pid=47611&bid=1481&lpid=198" target="_blank" rel="nofollow" data-redirect-label="Vave">
                             <img src="images/Vave logo.webp" alt="Vave - Safe online casino - CommonPOG" class="brand-logo">
                         </a>
                     </div>
-                    <div class="offer-big">
-                        150% Welcome Bonus<span class="highlight">The Pro's Choice For Crypto</span>
+
+                    <!-- Why we recommend -->
+                    <div class="why-recommend">
+                        <p class="why-title">Why We Recommend Vave</p>
+                        <ul class="why-list">
+                            <li><span class="check">✓</span> Fast crypto withdrawals</li>
+                            <li><span class="check">✓</span> Mobile-friendly experience</li>
+                            <li><span class="check">✓</span> Competitive welcome bonus</li>
+                            <li><span class="check">✓</span> Reliable payment methods</li>
+                            <li><span class="check">✓</span> Easy account setup</li>
+                        </ul>
                     </div>
-                    <p class="offer-details">Unlimited Cashbacks + Instant Payouts!</p>
-                    <a href="https://top.moxtop.com/redirect.aspx?pid=47611&bid=1481&lpid=198" target="_blank" rel="nofollow" class="btn btn-primary btn-glow">Claim Offer!</a>
+
+                    <div class="offer-big">150% Welcome Bonus<span class="highlight">The Pro's Choice For Crypto</span></div>
+                    <p class="offer-details">Unlimited Cashbacks · Instant Payouts · No Wagering Hassle</p>
+
+                    <!-- Scores -->
+                    <div class="scores-grid">
+                        <div class="score-item">
+                            <span class="score-label">Bonus Value</span>
+                            <span class="score-bar"><span style="width:88%"></span></span>
+                            <span class="score-num">8.8</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Payout Speed</span>
+                            <span class="score-bar"><span style="width:95%"></span></span>
+                            <span class="score-num">9.5</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Mobile UX</span>
+                            <span class="score-bar"><span style="width:92%"></span></span>
+                            <span class="score-num">9.2</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Trust</span>
+                            <span class="score-bar"><span style="width:90%"></span></span>
+                            <span class="score-num">9.0</span>
+                        </div>
+                    </div>
+
+                    <div class="card-meta">
+                        <span>Min. deposit: €10</span>
+                        <span>·</span>
+                        <span>Payout: ~1 hour</span>
+                        <span>·</span>
+                        <span>Updated: Jun 2026</span>
+                    </div>
+
+                    <a href="https://top.moxtop.com/redirect.aspx?pid=47611&bid=1481&lpid=198" target="_blank" rel="nofollow" class="btn btn-primary btn-glow" data-redirect-label="Vave">Open Free Account</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MAXSWAP – horizontal row card -->
+    <!-- Decision guidance strip -->
+    <div class="decision-strip">
+        <div class="container">
+            <p>Pick one casino below, create your free account, and start playing within 5 minutes.</p>
+        </div>
+    </div>
+
+    <!-- ALL CASINO CARDS — single unified section -->
+    <section class="offers-section">
+        <div class="container">
+            <h2 class="section-title">Top Choices</h2>
+
+            <div class="offers-grid">
+
+                <!-- StakePrix -->
+                <div class="card">
+                    <div class="badge crypto">Wager Free!</div>
+                    <div class="logo-area">
+                        <a href="https://www.stakeprix.com/referral/DQRaFye61c8P0rbo" target="_blank" rel="nofollow" data-redirect-label="StakePrix">
+                            <img src="images/StakePrix logo.webp" alt="StakePrix - No Wagering online casino - CommonPOG" class="brand-logo">
+                        </a>
+                    </div>
+                    <div class="offer-medium">250% Bonus<br><span class="offer-sub">up to €1,000</span></div>
+                    <p class="offer-details">No wagering requirements · 100 Free Spins</p>
+                    <div class="scores-grid scores-compact">
+                        <div class="score-item">
+                            <span class="score-label">Bonus Value</span>
+                            <span class="score-bar"><span style="width:93%"></span></span>
+                            <span class="score-num">9.3</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Payout Speed</span>
+                            <span class="score-bar"><span style="width:85%"></span></span>
+                            <span class="score-num">8.5</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Mobile UX</span>
+                            <span class="score-bar"><span style="width:86%"></span></span>
+                            <span class="score-num">8.6</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Trust</span>
+                            <span class="score-bar"><span style="width:84%"></span></span>
+                            <span class="score-num">8.4</span>
+                        </div>
+                    </div>
+                    <div class="card-meta">
+                        <span>Min. deposit: €20</span>
+                        <span>·</span>
+                        <span>Payout: ~2 hrs</span>
+                        <span>·</span>
+                        <span>Updated: Jun 2026</span>
+                    </div>
+                    <a href="https://www.stakeprix.com/referral/DQRaFye61c8P0rbo" target="_blank" rel="nofollow" class="btn btn-primary" data-redirect-label="StakePrix">Open Free Account</a>
+                </div>
+
+                <!-- Bitkingz -->
+                <div class="card">
+                    <div class="badge crypto">Mobile First!</div>
+                    <div class="logo-area">
+                        <a href="https://www.bitkingzredirect.com/l2-exclusive-gamba-25fs-150-150fs?stag=242478_69bd6388220023e6628aea1a" target="_blank" rel="nofollow" data-redirect-label="Bitkingz">
+                            <img src="images/bitkingz logo.webp" alt="Bitkingz - Mobile first experience online casino - CommonPOG" class="brand-logo">
+                        </a>
+                    </div>
+                    <div class="offer-medium">225% Welcome Pack</div>
+                    <p class="offer-details">Optimised for mobile · Google Pay supported</p>
+                    <div class="scores-grid scores-compact">
+                        <div class="score-item">
+                            <span class="score-label">Bonus Value</span>
+                            <span class="score-bar"><span style="width:87%"></span></span>
+                            <span class="score-num">8.7</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Payout Speed</span>
+                            <span class="score-bar"><span style="width:88%"></span></span>
+                            <span class="score-num">8.8</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Mobile UX</span>
+                            <span class="score-bar"><span style="width:96%"></span></span>
+                            <span class="score-num">9.6</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Trust</span>
+                            <span class="score-bar"><span style="width:85%"></span></span>
+                            <span class="score-num">8.5</span>
+                        </div>
+                    </div>
+                    <div class="card-meta">
+                        <span>Min. deposit: €10</span>
+                        <span>·</span>
+                        <span>Payout: ~2 hrs</span>
+                        <span>·</span>
+                        <span>Updated: Jun 2026</span>
+                    </div>
+                    <a href="https://www.bitkingzredirect.com/l2-exclusive-gamba-25fs-150-150fs?stag=242478_69bd6388220023e6628aea1a" target="_blank" rel="nofollow" class="btn btn-primary" data-redirect-label="Bitkingz">Open Free Account</a>
+                </div>
+
+                <!-- 22Bet -->
+                <div class="card">
+                    <div class="badge new">Most Trusted!</div>
+                    <div class="logo-area">
+                        <a href="https://moy.auraodin.com/redirect.aspx?pid=168722&lpid=15&bid=1484" target="_blank" rel="nofollow" data-redirect-label="22Bet">
+                            <img src="images/22bet logo.webp" alt="22Bet - Popular online casino - CommonPOG" class="brand-logo">
+                        </a>
+                    </div>
+                    <div class="offer-medium">100% + 100 FS<br><span class="offer-sub">Local Payments!</span></div>
+                    <p class="offer-details">10+ years of reliability · 100+ local banks supported</p>
+                    <div class="scores-grid scores-compact">
+                        <div class="score-item">
+                            <span class="score-label">Bonus Value</span>
+                            <span class="score-bar"><span style="width:80%"></span></span>
+                            <span class="score-num">8.0</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Payout Speed</span>
+                            <span class="score-bar"><span style="width:82%"></span></span>
+                            <span class="score-num">8.2</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Mobile UX</span>
+                            <span class="score-bar"><span style="width:84%"></span></span>
+                            <span class="score-num">8.4</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Trust</span>
+                            <span class="score-bar"><span style="width:92%"></span></span>
+                            <span class="score-num">9.2</span>
+                        </div>
+                    </div>
+                    <div class="card-meta">
+                        <span>Min. deposit: €1</span>
+                        <span>·</span>
+                        <span>Payout: ~4 hrs</span>
+                        <span>·</span>
+                        <span>Updated: Jun 2026</span>
+                    </div>
+                    <a href="https://moy.auraodin.com/redirect.aspx?pid=168722&lpid=15&bid=1484" target="_blank" rel="nofollow" class="btn btn-primary" data-redirect-label="22Bet">Open Free Account</a>
+                </div>
+
+                <!-- Spinko -->
+                <div class="card">
+                    <div class="badge new">Highest Bonus!</div>
+                    <div class="logo-area">
+                        <a href="https://record.joinaff.com/_1pWUdWEelDOdDTVfDmk3gWNd7ZgqdRLk/1/?pg=0" target="_blank" rel="nofollow" data-redirect-label="Spinko">
+                            <img src="images/spinko logo.webp" alt="Spinko - Popular online casino - CommonPOG" class="brand-logo">
+                        </a>
+                    </div>
+                    <div class="offer-medium">400% + 350 FS</div>
+                    <p class="offer-details">Built for mobile · No download needed · Crypto supported</p>
+                    <div class="scores-grid scores-compact">
+                        <div class="score-item">
+                            <span class="score-label">Bonus Value</span>
+                            <span class="score-bar"><span style="width:98%"></span></span>
+                            <span class="score-num">9.8</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Payout Speed</span>
+                            <span class="score-bar"><span style="width:83%"></span></span>
+                            <span class="score-num">8.3</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Mobile UX</span>
+                            <span class="score-bar"><span style="width:91%"></span></span>
+                            <span class="score-num">9.1</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Trust</span>
+                            <span class="score-bar"><span style="width:82%"></span></span>
+                            <span class="score-num">8.2</span>
+                        </div>
+                    </div>
+                    <div class="card-meta">
+                        <span>Min. deposit: €10</span>
+                        <span>·</span>
+                        <span>Payout: ~3 hrs</span>
+                        <span>·</span>
+                        <span>Updated: Jun 2026</span>
+                    </div>
+                    <a href="https://record.joinaff.com/_1pWUdWEelDOdDTVfDmk3gWNd7ZgqdRLk/1/?pg=0" target="_blank" rel="nofollow" class="btn btn-primary" data-redirect-label="Spinko">Open Free Account</a>
+                </div>
+
+                <!-- Coming Soon 1 -->
+                <div class="card card-coming-soon">
+                    <div class="badge exclusive">EXCLUSIVE</div>
+                    <div class="logo-area">
+                        <h3 class="brand-name raketti">Coming Soon</h3>
+                    </div>
+                    <div class="offer-medium">20% Rakeback<br>100 FS</div>
+                    <p class="offer-details">Fast withdrawals · Great VIP rewards</p>
+                    <a href="#" class="btn btn-muted">Notify Me</a>
+                </div>
+
+                <!-- Coming Soon 2 -->
+                <div class="card card-coming-soon">
+                    <div class="badge crypto">NEW</div>
+                    <div class="logo-area">
+                        <h3 class="brand-name jackburst">Coming Soon</h3>
+                    </div>
+                    <div class="offer-medium">Up to 500<br>Free Spins</div>
+                    <p class="offer-details">No wagering requirements</p>
+                    <a href="#" class="btn btn-muted">Notify Me</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAXSWAP – moved lower as secondary opportunity -->
     <section class="maxswap-section">
         <div class="container">
-            <p class="section-label">Spend Your Crypto Freely!</p>
+            <p class="section-label">Spend Your Crypto Freely</p>
 
             <div class="maxswap-row-card">
                 <div class="badge exclusive">No KYC!</div>
 
-                <!-- Col 1: Logo -->
                 <div class="maxswap-col maxswap-col-logo">
-                    <a href="https://analytics-maxswap.com/XydfhJLw" target="_blank" rel="nofollow">
+                    <a href="https://analytics-maxswap.com/XydfhJLw" target="_blank" rel="nofollow" data-redirect-label="Maxswap">
                         <img src="images/Maxswap-card-logo.webp" alt="Maxswap - Crypto Wallet - CommonPOG">
                     </a>
                 </div>
 
-                <!-- Col 2: Features -->
-                <!-- FIX: Removed inline font-size:30px which was overriding CSS and making list items huge -->
                 <div class="maxswap-col maxswap-col-features">
                     <ul>
                         <li>Works With Apple Pay</li>
@@ -114,138 +388,45 @@
                     </ul>
                 </div>
 
-                <!-- Col 3: Offer text -->
-                <!-- FIX: Changed class from "offer-headline" to "ms-offer-headline" to match CSS -->
                 <div class="maxswap-col maxswap-col-offer">
                     <div class="ms-offer-headline">Instant Card Access + Claim 50% Discount On Card Fee</div>
                 </div>
 
-                <!-- Col 4: CTA -->
                 <div class="maxswap-col maxswap-col-cta">
-                    <a href="https://analytics-maxswap.com/XydfhJLw" target="_blank" rel="nofollow" class="btn btn-primary btn-glow">Claim Offer!</a>
+                    <a href="https://analytics-maxswap.com/XydfhJLw" target="_blank" rel="nofollow" class="btn btn-primary btn-glow" data-redirect-label="Maxswap">Open Free Account</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TOP CHOICES -->
-    <!-- FIX: Removed stray </div> that was here and breaking DOM nesting -->
-    <section class="offers-section">
+    <!-- FUN FACT -->
+    <section class="fun-fact-section">
         <div class="container">
-            <h2 class="section-title">TOP CHOICES</h2>
-
-            <div class="offers-grid">
-
-                <div class="card">
-                    <div class="badge crypto">Wager Free!</div>
-                    <div class="logo-area">
-                        <!-- FIX: Added missing </a> closing tag -->
-                        <a href="https://www.stakeprix.com/referral/DQRaFye61c8P0rbo" target="_blank" rel="nofollow">
-                            <img src="images/StakePrix logo.webp" alt="StakePrix - No Wagering online casino - CommonPOG" class="brand-logo">
-                        </a>
-                    </div>
-                    <div class="offer-medium">250% BONUS <br>up to 1000€</div>
-                    <p class="offer-details">Without Wagering Requirements + 100 Free Spins</p>
-                    <!-- FIX: Removed <br><br><br> spacers — margin-top:auto on .btn handles alignment -->
-                    <a href="https://www.stakeprix.com/referral/DQRaFye61c8P0rbo" target="_blank" rel="nofollow" class="btn btn-primary">Claim Offer!</a>
-                </div>
-
-                <div class="card">
-                    <div class="badge crypto">Mobile First!</div>
-                    <div class="logo-area">
-                        <!-- FIX: Added missing </a> closing tag -->
-                        <a href="https://www.bitkingzredirect.com/l2-exclusive-gamba-25fs-150-150fs?stag=242478_69bd6388220023e6628aea1a" target="_blank" rel="nofollow">
-                            <img src="images/bitkingz logo.webp" alt="bitkingz - Mobile first experience online casino - CommonPOG" class="brand-logo">
-                        </a>
-                    </div>
-                    <div class="offer-medium">King-Sized <br>225% Welcome Pack!</div>
-                    <p class="offer-details">Optimized For Mobile + Google Pay Support!</p>
-                    <a href="https://www.bitkingzredirect.com/l2-exclusive-gamba-25fs-150-150fs?stag=242478_69bd6388220023e6628aea1a" target="_blank" rel="nofollow" class="btn btn-primary">Claim Offer!</a>
-                </div>
-
-                <div class="card">
-                    <div class="badge new">Most Trusted!</div>
-                    <div class="logo-area">
-                        <!-- FIX: Added missing </a> closing tag -->
-                        <a href="https://moy.auraodin.com/redirect.aspx?pid=168722&lpid=15&bid=1484" target="_blank" rel="nofollow">
-                            <img src="images/22bet logo.webp" alt="22Bet - Popular online casino - CommonPOG" class="brand-logo">
-                        </a>
-                    </div>
-                    <div class="offer-medium">100% + 100 FS <br>Local Payments!</div>
-                    <p class="offer-details">10+ Years of reliability + Supports Over 100 Local Banks!</p>
-                    <!-- FIX: Removed <br><br><br> spacers -->
-                    <a href="https://moy.auraodin.com/redirect.aspx?pid=168722&lpid=15&bid=1484" target="_blank" rel="nofollow" class="btn btn-primary">Claim Offer!</a>
-                </div>
-
-            </div>
+            <p class="fun-fact-text">"Your first spin could be anything — €0 or €50,000."<br><span class="fun-fact-sub">That's the point.</span></p>
         </div>
     </section>
 
-    <!-- SECOND SET OF CARDS -->
-    <section class="offers-section">
-        <div class="container">
-            <div class="offers-grid">
-
-                <div class="card">
-                    <div class="badge new">Highest Welcome Bonus!</div>
-                    <div class="logo-area">
-                        <!-- FIX: Added missing </a> closing tag -->
-                        <a href="https://record.joinaff.com/_1pWUdWEelDOdDTVfDmk3gWNd7ZgqdRLk/1/?pg=0" target="_blank" rel="nofollow">
-                            <img src="images/spinko logo.webp" alt="Spinko - Popular online casino - CommonPOG" class="brand-logo">
-                        </a>
-                    </div>
-                    <div class="offer-medium">Massive 400% + 350 FS</div>
-                    <p class="offer-details">Built for mobile – smooth, fast, zero download + Supports Crypto Payment!</p>
-                    <a href="https://record.joinaff.com/_1pWUdWEelDOdDTVfDmk3gWNd7ZgqdRLk/1/?pg=0" target="_blank" rel="nofollow" class="btn btn-primary">Claim Offer!</a>
-                </div>
-
-                <div class="card">
-                    <div class="badge exclusive">EXCLUSIVE!</div>
-                    <div class="logo-area">
-                        <!-- FIX: Replace (Coming Soon) with actual logo image when ready -->
-                        <h3 class="brand-name raketti">(Coming Soon)</h3>
-                    </div>
-                    <div class="offer-medium">20% RAKEBACK<br>100 FS</div>
-                    <p class="offer-details">Fast Withdrawals & Great VIP rewards!</p>
-                    <!-- FIX: Removed <br><br><br><br> spacers -->
-                    <a href="#" class="btn btn-primary">Claim Offer!</a>
-                </div>
-
-                <div class="card">
-                    <div class="badge crypto">NEW!</div>
-                    <div class="logo-area">
-                        <!-- FIX: Replace (Coming Soon) with actual logo image when ready -->
-                        <h3 class="brand-name jackburst">(Coming Soon)</h3>
-                    </div>
-                    <div class="offer-medium">Up to 500 <br>Free Spins</div>
-                    <p class="offer-details">No Wagering Requirements</p>
-                    <!-- FIX: Removed <br><br><br><br> spacers -->
-                    <a href="#" class="btn btn-primary">Claim Offer!</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
+    <!-- ABOUT -->
     <section class="about-me">
         <div class="container about-container">
-            <h2>Written by CommonPOG — Slot Specialist & Founder</h2>
+            <h2>Written by CommonPOG — Slot Specialist &amp; Founder</h2>
             <p>
-                With over 4 years of experience in the online slot industry, CommonPOG was founded to bring transparency to the player experience. I personally analyze slot mechanics, verify RTP (Return to Player) percentages, and test withdrawal speeds to ensure every recommendation meets high player standards. I don't just list casinos; I hunt for the best player value.
+                With over 4 years of experience in the online slot industry, CommonPOG was founded to bring transparency to the player experience. I personally analyse slot mechanics, verify RTP (Return to Player) percentages, and test withdrawal speeds to ensure every recommendation meets high player standards. I don't just list casinos — I hunt for the best player value.
             </p>
             <div class="social-links">
                 <a href="https://x.com/uncommon_pog" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
-                <a href="https://www.youtube.com/@GambaHighlightsYT" target="_blank" rel="noopener noreferrer">YouTube (Main Channel)</a>
-                <a href="https://www.youtube.com/@GambaHighlightss" target="_blank" rel="noopener noreferrer">YouTube (Second Channel)</a>
-                <a href="https://www.youtube.com/@GambaPOG" target="_blank" rel="noopener noreferrer">YouTube (Third Channel)</a>
+                <a href="https://www.youtube.com/@GambaHighlightsYT" target="_blank" rel="noopener noreferrer">YouTube (Main)</a>
+                <a href="https://www.youtube.com/@GambaHighlightss" target="_blank" rel="noopener noreferrer">YouTube (Second)</a>
+                <a href="https://www.youtube.com/@GambaPOG" target="_blank" rel="noopener noreferrer">YouTube (Third)</a>
                 <a href="https://www.instagram.com/commonpog" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-container">
-            <h3>Responsible Gambling & Global Compliance</h3>
+            <h3>Responsible Gambling &amp; Global Compliance</h3>
             <p class="disclaimer-text">
                 Gambling should be a form of entertainment, not a way to make money. We provide information for a global audience; however, it is your responsibility to ensure that you are of legal age and that online gambling is legal in your jurisdiction before playing. We do not promote illegal activities.
             </p>
@@ -266,17 +447,83 @@
         </div>
     </footer>
 
+    <!-- Redirect overlay -->
+    <div class="redirect-overlay" id="redirectOverlay">
+        <div class="redirect-box">
+            <div class="redirect-steps">
+                <div class="redirect-step active" id="rStep1">
+                    <span class="redirect-check">✓</span> Opening secure registration...
+                </div>
+                <div class="redirect-step" id="rStep2">
+                    <span class="redirect-check">✓</span> Bonus details unlocked.
+                </div>
+                <div class="redirect-step" id="rStep3">
+                    <span class="redirect-check">✓</span> Redirecting to official partner site...
+                </div>
+            </div>
+            <p class="redirect-label" id="redirectLabel"></p>
+        </div>
+    </div>
+
     <script>
+        // Scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        });
-        document.querySelectorAll('.card, .hero-text, .section-title').forEach((el) => {
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .hero-text, .section-title, .decision-strip, .fun-fact-section, .maxswap-row-card').forEach((el) => {
             el.classList.add('hidden-element');
             observer.observe(el);
+        });
+
+        // CTA redirect overlay with progressive feedback
+        const overlay = document.getElementById('redirectOverlay');
+        const rStep1 = document.getElementById('rStep1');
+        const rStep2 = document.getElementById('rStep2');
+        const rStep3 = document.getElementById('rStep3');
+        const redirectLabel = document.getElementById('redirectLabel');
+
+        document.querySelectorAll('[data-redirect-label]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                e.preventDefault();
+
+                const label = this.getAttribute('data-redirect-label');
+                redirectLabel.textContent = label;
+
+                // Reset
+                [rStep1, rStep2, rStep3].forEach(s => s.classList.remove('active', 'done'));
+                overlay.classList.add('active');
+                rStep1.classList.add('active');
+
+                setTimeout(() => {
+                    rStep1.classList.remove('active');
+                    rStep1.classList.add('done');
+                    rStep2.classList.add('active');
+                }, 700);
+
+                setTimeout(() => {
+                    rStep2.classList.remove('active');
+                    rStep2.classList.add('done');
+                    rStep3.classList.add('active');
+                }, 1400);
+
+                setTimeout(() => {
+                    rStep3.classList.add('done');
+                    window.open(href, '_blank', 'noopener,noreferrer');
+                    overlay.classList.remove('active');
+                }, 2000);
+            });
+        });
+
+        // Close overlay on background click
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) overlay.classList.remove('active');
         });
     </script>
 
