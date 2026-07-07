@@ -501,6 +501,13 @@
                 overlay.classList.add('active');
                 rStep1.classList.add('active');
 
+                // Open the tab NOW, synchronously within the tap/click itself.
+                // Mobile browsers (iOS Safari, Chrome Android) only allow window.open()
+                // to succeed when it's a direct result of the user gesture — if it's
+                // called later inside a setTimeout, they silently block it. Opening a
+                // blank tab here and navigating it after the animation avoids that.
+                const newTab = window.open('', '_blank');
+
                 setTimeout(() => {
                     rStep1.classList.remove('active');
                     rStep1.classList.add('done');
@@ -515,7 +522,15 @@
 
                 setTimeout(() => {
                     rStep3.classList.add('done');
-                    window.open(href, '_blank', 'noopener,noreferrer');
+                    if (newTab) {
+                        // Popup succeeded — send it to the affiliate link
+                        newTab.opener = null;
+                        newTab.location.href = href;
+                    } else {
+                        // Popup was blocked regardless — fall back to same-tab redirect
+                        // so the user still reaches the offer instead of nothing happening
+                        window.location.href = href;
+                    }
                     overlay.classList.remove('active');
                 }, 2000);
             });
