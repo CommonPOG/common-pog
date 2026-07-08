@@ -447,24 +447,6 @@
         </div>
     </footer>
 
-    <!-- Redirect overlay -->
-    <div class="redirect-overlay" id="redirectOverlay">
-        <div class="redirect-box">
-            <div class="redirect-steps">
-                <div class="redirect-step active" id="rStep1">
-                    <span class="redirect-check">✓</span> Opening secure registration...
-                </div>
-                <div class="redirect-step" id="rStep2">
-                    <span class="redirect-check">✓</span> Bonus details unlocked.
-                </div>
-                <div class="redirect-step" id="rStep3">
-                    <span class="redirect-check">✓</span> Redirecting to official partner site...
-                </div>
-            </div>
-            <p class="redirect-label" id="redirectLabel"></p>
-        </div>
-    </div>
-
     <script>
         // Scroll animations
         const observer = new IntersectionObserver((entries) => {
@@ -480,80 +462,9 @@
             observer.observe(el);
         });
 
-        // CTA redirect overlay with progressive feedback
-        const overlay = document.getElementById('redirectOverlay');
-        const rStep1 = document.getElementById('rStep1');
-        const rStep2 = document.getElementById('rStep2');
-        const rStep3 = document.getElementById('rStep3');
-        const redirectLabel = document.getElementById('redirectLabel');
-
-        // Mobile check — on mobile we skip the loading animation entirely
-        // and redirect instantly (same tab), since the animated overlay is a
-        // desktop-only trust-building touch. Re-checked on every click rather
-        // than cached once, so it stays correct across orientation changes.
-        function isMobileView() {
-            return window.matchMedia('(max-width: 768px)').matches;
-        }
-
-        document.querySelectorAll('[data-redirect-label]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (!href || href === '#') return;
-                e.preventDefault();
-
-                // Mobile: skip the animation, redirect immediately in the same tab
-                if (isMobileView()) {
-                    window.location.href = href;
-                    return;
-                }
-
-                const label = this.getAttribute('data-redirect-label');
-                redirectLabel.textContent = label;
-
-                // Reset
-                [rStep1, rStep2, rStep3].forEach(s => s.classList.remove('active', 'done'));
-                overlay.classList.add('active');
-                rStep1.classList.add('active');
-
-                // Open the tab NOW, synchronously within the tap/click itself.
-                // Mobile browsers (iOS Safari, Chrome Android) only allow window.open()
-                // to succeed when it's a direct result of the user gesture — if it's
-                // called later inside a setTimeout, they silently block it. Opening a
-                // blank tab here and navigating it after the animation avoids that.
-                const newTab = window.open('', '_blank');
-
-                setTimeout(() => {
-                    rStep1.classList.remove('active');
-                    rStep1.classList.add('done');
-                    rStep2.classList.add('active');
-                }, 700);
-
-                setTimeout(() => {
-                    rStep2.classList.remove('active');
-                    rStep2.classList.add('done');
-                    rStep3.classList.add('active');
-                }, 1400);
-
-                setTimeout(() => {
-                    rStep3.classList.add('done');
-                    if (newTab) {
-                        // Popup succeeded — send it to the affiliate link
-                        newTab.opener = null;
-                        newTab.location.href = href;
-                    } else {
-                        // Popup was blocked regardless — fall back to same-tab redirect
-                        // so the user still reaches the offer instead of nothing happening
-                        window.location.href = href;
-                    }
-                    overlay.classList.remove('active');
-                }, 2000);
-            });
-        });
-
-        // Close overlay on background click
-        overlay.addEventListener('click', function(e) {
-            if (e.target === overlay) overlay.classList.remove('active');
-        });
+        // CTA links use native target="_blank" anchors, so clicking them opens
+        // the affiliate offer in a new tab immediately on both desktop and
+        // mobile — no JS-driven overlay, delay, or window.open() involved.
     </script>
 
 </body>
