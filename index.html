@@ -487,11 +487,25 @@
         const rStep3 = document.getElementById('rStep3');
         const redirectLabel = document.getElementById('redirectLabel');
 
+        // Mobile check — on mobile we skip the loading animation entirely
+        // and redirect instantly (same tab), since the animated overlay is a
+        // desktop-only trust-building touch. Re-checked on every click rather
+        // than cached once, so it stays correct across orientation changes.
+        function isMobileView() {
+            return window.matchMedia('(max-width: 768px)').matches;
+        }
+
         document.querySelectorAll('[data-redirect-label]').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (!href || href === '#') return;
                 e.preventDefault();
+
+                // Mobile: skip the animation, redirect immediately in the same tab
+                if (isMobileView()) {
+                    window.location.href = href;
+                    return;
+                }
 
                 const label = this.getAttribute('data-redirect-label');
                 redirectLabel.textContent = label;
