@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Faceted navigation placeholders — uncomment once filter URLs
+# (?sort=, ?provider=, ?bonus=) actually exist on the site.
+# Disallow: /*?sort=
+# Disallow: /*?provider=
+# Disallow: /*?bonus=
+
+Sitemap: https://commonpog.com/sitemap.xml
