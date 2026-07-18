@@ -289,14 +289,24 @@ a {
     background: var(--bg-card-hover);
 }
 
-.hero-card-wrapper .featured-card {
-    border: 1px solid var(--border-glow);
-    box-shadow: 0 0 40px rgba(255, 77, 0, 0.12);
+/* ── CLS reservation ──
+   Floors set below the smallest real rendered height measured across
+   desktop/tablet/mobile, so they reserve space during load without
+   ever forcing extra empty space once content settles. */
+.offers-grid .card:not(.card-coming-soon) {
+    min-height: 340px;
 }
 
 .card-coming-soon {
+    min-height: 210px;
     opacity: 0.6;
     pointer-events: none;
+}
+
+.hero-card-wrapper .featured-card {
+    min-height: 600px;
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 0 40px rgba(255, 77, 0, 0.12);
 }
 
 .logo-area {
@@ -588,6 +598,7 @@ a {
     align-items: stretch;
     overflow: visible;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    min-height: 160px;
 }
 
 .maxswap-row-card:hover {
