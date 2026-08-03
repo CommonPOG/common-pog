@@ -467,6 +467,10 @@ a {
     justify-content: center;
 }
 
+.card-meta .wagering {
+    white-space: nowrap;
+}
+
 /* ── Buttons ── */
 .btn {
     display: inline-block;
